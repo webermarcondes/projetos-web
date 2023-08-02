@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM - Document Object Model</title>
+    </head>
+
+    <body onload="addDia()">
+
+        <select id="dia">
+            
+        </select>
+
+        <script>
+            function addDia() {
+                for(i=1; i <= 31; i++) {
+                    let option = document.createElement('option');
+                    option.value = i;
+                    option.innerHTML = i;
+
+                    document.getElementById('dia').append(option)
+                }    
+
+            }
+
+
+        </script>
+
+
+    </body>
+</html>

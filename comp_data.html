@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body onload="addData()">
+        <form>
+            <fieldset>
+                <legend>Data</legend>
+
+                <select id="dia">
+                    
+                </select>
+
+                <select id="mes">
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+
+                <select id="ano">
+
+                </select>
+
+                <input type="button" value="Exibir" onclick="exibir()"/>
+
+            </fieldset>
+        </form>
+
+        <script>
+            function addData() {
+                
+                for(i=1; i<=30; i++) {
+                    let option = document.createElement('option');
+                    option.value = i;
+                    option.innerHTML = i;
+
+                    document.getElementById("dia").append(option);
+                }
+
+
+                for(i=1970; i<=2023; i++) {
+                    let option = document.createElement('option');
+                    option.value = i;
+                    option.innerHTML = i;
+
+                    document.getElementById("ano").append(option);
+                }
+         
+
+            }
+
+            function exibir() {
+                let dia = document.getElementById("dia").value;
+                let mes = document.getElementById("mes").value;
+                let ano = document.getElementById("ano").value;
+
+                alert(dia + "/" + mes + "/" + ano)
+            }
+        </script>
+
+    </body>
+
+</html>

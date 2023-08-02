@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Soma de valores</title>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Somar: </legend>
+                <label for="numero1">Número 1</label>
+                <input type="text" id="numero1" />
+
+                <label for="numero2">Número 2</label>
+                <input type="text" id="numero2" />
+
+                <input type="button" value="somar" onclick="somar()" />
+            </fieldset>
+        </form>
+        
+        <script>
+
+            function somar() {
+                let numero1 = document.getElementById('numero1').value;
+                let numero2 = document.getElementById('numero2').value;
+
+                alert(parseInt(numero1) + parseInt(numero2))
+            }
+
+
+
+
+        </script>
+
+    </body>
+
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lista Suspensa - Select</title>
+    </head>
+
+    <body>
+        <select id="periodo"> <!--cria uma lista suspensa com opções  pre-definidas-->
+            <option value="M">Matutino</option>  <!--value define o valor que será gerado quando a opção é escolhida. Ex.: Matutino gera o valor M.-->
+            <option value="V">Vespertino</option>
+            <option value = "N" selected>Noturno</option> <!--tag para definir as opções padrões da lista suspensa.
+                                                selected define a opção como selecionada por padrão.-->
+        </select>
+
+
+        <input type="button" value = "Exibir" onclick="alert(periodo.value)"/>
+
+    </body>
+
+</html>
