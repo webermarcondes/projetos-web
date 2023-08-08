@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Tabela</title>
+    </head>
+    
+    <body>
+
+
+        <form>
+            <fieldset>
+                <legend>Adicionar Produto: </legend>
+
+                <label for="produto">produto</label>
+                <input type="text" id="produto" name="produto"/>
+
+                <label for="quantidade">quantidade</label>
+                <input type="text" id="quantidade" name="quantidade">
+
+                <label for="valor">Valor</label>
+                <input type="text" id="valor" name="valor">
+
+            </fieldset>
+
+
+        </form>
+
+        <br><br><br>
+        
+        <table border=1 width="100%">
+           
+            <thead>
+                <tr>
+                    <th align="center">Produto</th>
+                    <th align="center">Quantidade</th>
+                    <th align="right">Preço</th>
+                </tr>
+        </thead>
+        
+        <tbody></tbody>
+
+        <tfoot>
+            <tr>
+                <td align="center">Total</td>
+                <td align="center" id="tot_quantidade"></td>
+                <td align="right" id="tot_valor"></td>
+            </tr>
+        </tfoot>
+        </table>
+
+        <input type="button" value="adicionar" onclick="addRow()">
+    
+    </body>
+
+    <script>
+
+        var tot_quantidade = 0;
+        var tot_valor = 0;
+
+        function addRow() {
+            let tr = document.createElement('tr');
+            let td_produto = document.createElement('td');
+            let td_qtde = document.createElement('td');
+            let td_valor = document.createElement('td');
+
+            let produto = document.getElementById("produto").value;
+            let qtde =  document.getElementById("quantidade").value;
+            let valor = document.getElementById("valor").value;
+
+            tot_quantidade += parseInt(qtde);
+            tot_valor += parseInt(valor)
+
+            document.getElementById('tot_quantidade').innerHTML = tot_quantidade;
+            document.getElementById('tot_valor').innerHTML = tot_valor;
+    
+            td_produto.innerHTML = produto;
+            td_qtde.innerHTML = qtde;
+            td_valor.innerHTML = valor;
+
+            td_produto.align = "center";
+            td_qtde.align = "center";
+            td_valor.align = "right";
+
+            tr.append(td_produto);
+            tr.append(td_qtde);
+            tr.append(td_valor);
+
+            document.getElementsByTagName('table')[0].append(tr);
+        }
+    </script>
+
+</html>

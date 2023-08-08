@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pedido Games</title>       
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Pedido Games</legend>
+
+                <label for="produto">Produto: </label>
+                <input type="text" id="produto" name="produto"/>
+
+                <label for="quantidade">Quantidade: </label>
+                <input type="text" id="quantidade" name="quantidade"/>
+
+                <label for="valor">Valor: </label>
+                <input type="text" id="valor" name="valor"/>
+            
+                <input type="button" value="Adicionar" onclick="adicionar()">
+            </fieldset>
+        </form>
+
+        <br><br>
+
+        <table border=2 width="100%">
+
+            <thead>
+                <tr>
+                    <th align="center">Código</th>
+                    <th align="center">Quantidade</th>
+                    <th align="center">Produto</th>
+                    <th align="center">Valor</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+            <tfoot>
+
+                <tr>
+                    <td align="center">Total</td>
+                    <td align="center" id="tot_qtde"></td>
+                    <td align="center"></td>
+                    <td align="center" id="tot_valor"></td>
+                </tr>
+            </tfoot>
+
+
+        </table>
+
+        
+    </body>
+
+    <script>
+
+        var codigo = 0;
+
+        var tot_qtde = 0;
+        var tot_valor = 0; 
+
+        function adicionar() {
+
+            let tr = document.createElement('tr');
+            let td_codigo = document.createElement('td')
+            let td_produto = document.createElement('td');
+            let td_valor = document.createElement('td');
+            let td_qtde = document.createElement('td');
+
+            codigo += 1;
+            let produto = document.getElementById('produto').value;
+            let qtde = document.getElementById('quantidade').value;
+            let valor = document.getElementById('valor').value;
+            
+            tot_qtde += parseInt(qtde);
+            document.getElementById('tot_qtde').innerHTML = tot_qtde;
+
+            tot_valor += parseInt(valor);
+            document.getElementById('tot_valor').innerHTML = tot_valor;
+
+
+            td_codigo.innerHTML = codigo;
+            td_produto.innerHTML = produto;
+            td_valor.innerHTML = valor;
+            td_qtde.innerHTML = qtde;
+
+            td_codigo.align = "center"
+            td_produto.align = "center";
+            td_valor.align = "right";
+            td_qtde.align = "center";
+
+            tr.append(td_codigo)
+            tr.append(td_qtde);
+            tr.append(td_produto);
+            tr.append(td_valor);
+
+            document.getElementsByTagName('table')[0].append(tr);
+        
+        
+        }
+
+
+    </script>
+
+
+
+</html>
